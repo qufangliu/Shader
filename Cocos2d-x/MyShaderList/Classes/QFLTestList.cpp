@@ -11,6 +11,9 @@
 //工具类
 #include "QFLTools/QFLHelper.hpp"
 
+//测试类
+#include "QFLTestItem/Test_1/QFLTestTIle.hpp"
+
 USING_NS_CC;
 
 QFLTestList::QFLTestList()
@@ -63,8 +66,8 @@ void QFLTestList::addListUI()
 void QFLTestList::addTestItem()
 {
     //测试Item
-    this->addItem("TestItem", [=](){
-        log("TestItem");
+    this->addItem("TestTile", [=](){
+        this->addChild(QFLTestTile::create());
     });
 }
 
