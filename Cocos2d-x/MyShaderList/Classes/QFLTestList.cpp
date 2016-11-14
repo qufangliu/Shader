@@ -12,7 +12,9 @@
 #include "QFLTools/QFLHelper.hpp"
 
 //测试类
-#include "QFLTestItem/Test_1/QFLTestTIle.hpp"
+#include "QFLTestItem/QFLTestSprite.hpp"
+#include "TestSample/TestSampleSprite.hpp"
+#include "QFLTestItem/QFLTestGL.hpp"
 
 USING_NS_CC;
 
@@ -66,8 +68,18 @@ void QFLTestList::addListUI()
 void QFLTestList::addTestItem()
 {
     //测试Item
-    this->addItem("TestTile", [=](){
-        this->addChild(QFLTestTile::create());
+    this->addItem("TestSprite", [=](){
+        this->addChild(QFLTestSprite::create());
+    });
+    
+    //测试shader示例
+    this->addItem("Test-Sample", [=](){
+        this->addChild(TestSampleSprite::create());
+    });
+    
+    //测试gl示例
+    this->addItem("Test_GL", [=](){
+        this->addChild(QFLTestGL::create());
     });
 }
 
